@@ -33,5 +33,6 @@ int	test_free(test *t)
 	t->line = 0;
 	memset(t->id, 0, sizeof(t->id));
 	memset(t, 0, sizeof(test));
+	free(t);
 	return (1);
 }

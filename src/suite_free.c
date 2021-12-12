@@ -21,5 +21,8 @@ int	suite_free(suite *s)
 	s->name = NULL;
 	s->cases = NULL;
 	memset(s, 0, sizeof(suite));
+	free(s);
 	return (1);
+error:
+	return (0);
 }

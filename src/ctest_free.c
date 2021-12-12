@@ -21,4 +21,6 @@ void	ctest_free(ctest *ct)
 	ct->path = NULL;
 	ct->suites = NULL;
 	memset(ct, 0, sizeof(ctest));
+error:
+	return;
 }
