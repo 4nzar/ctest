@@ -20,9 +20,15 @@ int	test_free(test *t)
 		memset(t->location, 0, strlen(t->location));
 		free(t->location);
 	}
+	if (t->remarks)
+	{
+		memset(t->remarks, 0, strlen(t->remarks));
+		free(t->remarks);
+	}
 	t->expression = NULL;
 	t->description = NULL;
 	t->location = NULL;
+	t->remarks = NULL;
 	t->pass = 0;
 	t->line = 0;
 	memset(t->id, 0, sizeof(t->id));

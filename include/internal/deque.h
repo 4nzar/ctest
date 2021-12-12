@@ -4,7 +4,7 @@
 # include <stdlib.h>
 # include <string.h>
 
-# include "libdebug.h"
+# include "internal/debug.h"
 
 # define DEQUE_SUCCESS 0
 # define DEQUE_ERROR_DEQUE_NULL -1

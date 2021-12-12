@@ -20,6 +20,7 @@ test	*test_create(
 		char const *fname,
 		char const *expr,
 		char const *desc,
+		char const *remarks,
 		int pass,
 		int line,
 		char *location
