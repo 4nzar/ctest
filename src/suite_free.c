@@ -2,12 +2,15 @@
 
 int	suite_free(suite *s)
 {
+	int ret;
+
 	debug("----- %s", __FUNCTION__);
 	if (!s)
 		return (0);
 	if (s->cases)
 	{
-		deque_clear(s->cases, (void *)&test_free);
+		ret = deque_clear(s->cases, (void *)&test_free);
+		check(ret == 2, "only 2 assertions exist in this suite");
 		free(s->cases);
 	}
 	if (s->name)

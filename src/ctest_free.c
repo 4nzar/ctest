@@ -2,12 +2,15 @@
 
 void	ctest_free(ctest *ct)
 {
+	int ret;
+
 	debug("----- %s", __FUNCTION__);
 	if (!ct)
 		return ;
 	if (ct->suites)
 	{
-		deque_clear(ct->suites, (void *)&suite_free);
+		ret = deque_clear(ct->suites, (void *)&suite_free);
+		check(ret == 1, "only one suite exist in ctest");
 		free(ct->suites);
 	}
 	if (ct->path)
